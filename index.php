@@ -19,24 +19,34 @@ if (!class_exists('Timber')) {
 }
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
-$context['categories'] = get_categories();
-
-foreach ($context['categories'] as &$category) {
-        $category->posts = get_posts(array('category_name' => $category->name));
-}
-
 $templates = array('base.twig');
-
-$site = new TimberPost(81);
-//$site = new TimberPost(632); //janek
-
-$context = Timber::get_context();
+$site = new TimberSite();
+$context['site'] = $site;
         
 if (is_home()) {
-        array_unshift($templates, 'home.twig');
+    array_unshift($templates, 'home.twig');
+
+    $context['is_homepage'] = true;
+    $context['homepage_content'] = array();
+
+    foreach ($context['menu']->items as $item) {
+        if ($item->object_type == 'post') {
+                $context['homepage_content'][] = array(
+                      'id' => $item->ID,
+                      'type' => 'post',
+                      'content' => $item->post_content
+                );
+        } //else... what?
+    }
 }
 
-$context['site'] = $site;
+//chcesz posta? proszę, na przykład tak:
+$context['post_81'] = new TimberPost(81);
 
 Timber::render($templates, $context);
+
+echo "<!--\n";
+
+var_dump($context);
+
+echo "\n-->\n";

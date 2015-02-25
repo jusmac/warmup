@@ -6,12 +6,6 @@
 </head>
 {% endblock %}
 <body class="{{body_class}} bod_y" data-template="base.twig">
-    {#
-    {% for category in categories %}
-        <a class="nav-item" href="#{{category.slug}}"><h4>{{category.name}}</h4></a>
-    {% endfor %}#}
-
-
 
     <nav id="nav-main" class="nav-main" role="navigation">
         <div class="banner">
@@ -43,18 +37,29 @@
 
     {% block content %}
 
-    <section role="main" class="content-wrapper">
-        <article class="site" id="site-{{url}}">
-            <section class="article-content">
-                <h1 class="article-h1">{{site.title}}</h1>
-                <div class="article-body">
-                    {{site.content}}
-                </div>
-            </section>
+        {% if is_homepage %}
+        {% for page_content in homepage_content %}
+            {% if page_content.type == 'post' %}
+            <a name="page_content.id"></a>
+            <div>
+                {{page_content.content}}
+            </div>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
 
-        </article>
-    </section>
-    
+        <section role="main" class="content-wrapper">
+            <article class="site" id="site-{{url}}">
+                <section class="article-content">
+                    <h1 class="article-h1">{{post_81.title}}</h1>
+                    <div class="article-body">
+                        {{post_81.content}}
+                    </div>
+                </section>
+
+            </article>
+        </section>
+
     {% endblock %}
 
     {% block footer %}
@@ -63,26 +68,6 @@
             {{ function('wp_footer') }}
         </div>
     {% endblock %}
-    <script type='text/javascript' src='wp-content/themes/warmup/scripts/jquery.min.js'></script>
-    <script type='text/javascript' src='wp-content/themes/warmup/scripts/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='wp-content/themes/warmup/scripts/jquery.easing.1.3.js'></script> 
-    <script type='text/javascript' src='wp-content/themes/warmup/scripts/camera.min.js'></script> 
 
-
-    <script>
-        jQuery(function() {
-
-            jQuery('#camera_wrap_1').camera({
-                thumbnails: true
-            });
-
-            jQuery('#camera_wrap_2').camera({
-                height: '400px',
-                loader: 'bar',
-                pagination: false,
-                thumbnails: true
-            });
-        });
-    </script>
 </body>
 </html>
