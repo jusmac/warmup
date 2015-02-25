@@ -30,13 +30,29 @@ if (is_home()) {
     $context['homepage_content'] = array();
 
     foreach ($context['menu']->items as $item) {
-        if ($item->object_type == 'post') {
+        if ($item->type == 'post_type') {
+                $post = new TimberPost($item->_menu_item_object_id);
                 $context['homepage_content'][] = array(
                       'id' => $item->ID,
                       'type' => 'post',
-                      'content' => $item->post_content
+                      'slug' => $post->post_name,
+                      'post' => $post
                 );
-        } //else... what?
+        } else if ($item->type == 'taxonomy') {
+            $timberPosts = array();
+
+            $posts = get_posts(array('category' => $item->_menu_item_object_id));
+            foreach ($posts as $post) {
+                $timberPosts[] = new TimberPost($post->ID);
+            }
+
+            $context['homepage_content'][] = array(
+              'id' => $item->ID,
+              'type' => 'list',
+              'slug' => $item->slug,
+              'content' => $timberPosts
+            );
+        }
     }
 }
 
@@ -47,6 +63,6 @@ Timber::render($templates, $context);
 
 echo "<!--\n";
 
-var_dump($context);
+var_dump($context['menu']);
 
 echo "\n-->\n";

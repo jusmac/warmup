@@ -17,7 +17,11 @@
             <ul class="navigation">
                 {% for item in menu.get_items %}
                     <li class="nav-item {{item.classes | join(' ')}}">
-                        <a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+                        {% if is_homepage and item.type != 'custom' %}
+                            <a class="nav-link" href="#{{item.slug}}">{{item.title}}</a>
+                        {% else %}
+                            <a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+                        {% endif %}
                         {% if item.get_children %}
                             <ul class="nav nav-drop">
                                 {% for child in item.get_children %}
@@ -38,27 +42,31 @@
     {% block content %}
 
         {% if is_homepage %}
-        {% for page_content in homepage_content %}
-            {% if page_content.type == 'post' %}
-            <a name="page_content.id"></a>
+        {% for homepage_section in homepage_content %}
+            <a name="{{homepage_section.slug}}"></a>
+            {% if homepage_section.type == 'post' %}
+            <h3>{{homepage_section.post.title}}</h3>
             <div>
-                {{page_content.content}}
+                {{homepage_section.post.content}}
             </div>
+            {% elseif homepage_section.type == 'list' %}
+                <div class="accordian">
+                <ul>
+                {% for post in homepage_section.content %}
+                    <li>
+                    <div class="image_title">
+                        <a href="{{post.link}}">{{post.title}}</a>
+                    </div>
+                    <div>
+                        {{post.content}}
+                    </div>
+                    </li>
+                {% endfor %}
+                </ul>
+                </div>
             {% endif %}
         {% endfor %}
         {% endif %}
-
-        <section role="main" class="content-wrapper">
-            <article class="site" id="site-{{url}}">
-                <section class="article-content">
-                    <h1 class="article-h1">{{post_81.title}}</h1>
-                    <div class="article-body">
-                        {{post_81.content}}
-                    </div>
-                </section>
-
-            </article>
-        </section>
 
     {% endblock %}
 
