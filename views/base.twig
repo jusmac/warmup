@@ -19,21 +19,7 @@
                 <a class="hdr-logo-link" href="/wordpress" rel="home"><img src="http://testwww.pl/logo.jpg"</a> Agencja
             </h3>
         </div>
-        <div class="nav">
-            <ul class="navigation">  
-                <li class="nav-item">
-                    <a class="nav-link" href=""</a>    
-                    <ul class="nav nav-drop">
-                        <li class="nav-drop-item">
-                            <a class="nav-link" href="menu_realizacje">Realizacje</a>
-                        </li>
-                         <li class="nav-drop-item">
-                            <a class="nav-link" href="menu_specjalisci">Kontakt</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            
+        <div class="nav">     
             <ul class="navigation">
                 {% for item in menu.get_items %}
                     <li class="nav-item {{item.classes | join(' ')}}">
@@ -51,11 +37,10 @@
                     </li>
                 {% endfor %}
             </ul>
-            
+
         </div>
     </nav>
-	{% block content %}
-    <div class="o_nas">
+    {#<div class="o_nas">
         <section class="rw-wrapper">
             <h2 class="rw-sentence">
                 <span>Agencja</a></span>
@@ -113,142 +98,163 @@
     </div>
 </div>
 
-
-
-    <div class="article">
-            {% for category in categories %}
-                <a name="{{category.slug}}"></a>
-                <article class="{{category.name}}" style="height: 500px;">
-                    <h3>{{category.name}}</h3>
-					<div class="accordian">
-					<ul>
-                    {%for post in category.posts %}
-					<li>
-                        <section>
-                            <h4>{{post.post_title}}</h4>
-                            {{post.post_content}}
-                        </section>
-					</li>
-                    {%endfor%}
-					</ul>
-					</div>
-                </article>
-            {% endfor %}
-    </div>
-    {#
-        <div class="slider">
-            <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-                <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja1.jpg" data-src="wp-content/themes/warmup/images/slides/realizacja1.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        Realizacja1
-                    </div>
-                </div>
-                <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja2.jpg" data-src="wp-content/themes/warmup//images/slides/realizacja2.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        Realizacja2
-                    </div>
-                </div>
-                <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja3.png" data-src="wp-content/themes/warmup/images/slides/realizacja3.png">
-                    <div class="camera_caption fadeFromBottom">
-                        Realizacja3
-                    </div>
-                </div>
-                <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja4.jpg" data-src="wp-content/themes/warmup/images/slides/realizacja4.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        Realizacja4
-                    </div>
-                </div>
-            </div>
+    <section role="main" class="content-wrapper">
+        {% if title %}<h1>{{title}}</h1>{% endif %}
+        <div class="wrapper {{sidebar_class}}">
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
         </div>
+    </section>#}
 
-    
-    object(stdClass)#1873 (15) {
-          ["term_id"]=>
-          &string(1) "1"
-          ["name"]=>
-          &string(13) "Bez kategorii"
-          ["slug"]=>
-          &string(13) "bez-kategorii"
-          ["term_group"]=>
-          string(1) "0"
-          ["term_taxonomy_id"]=>
-          string(1) "1"
-          ["taxonomy"]=>
-          string(8) "category"
-          ["description"]=>
-          &string(0) ""
-          ["parent"]=>
-          &string(1) "0"
-          ["count"]=>
-          &string(1) "1"
-          ["cat_ID"]=>
-          &string(1) "1"
-          ["category_count"]=>
-          &string(1) "1"
-          ["category_description"]=>
-          &string(0) ""
-          ["cat_name"]=>
-          &string(13) "Bez kategorii"
-          ["category_nicename"]=>
-          &string(13) "bez-kategorii"
-          ["category_parent"]=>
-          &string(1) "0"
-        }
-            
-            
-            object(WP_Post)#1879 (24) {
-            ["ID"]=>
-            int(42)
-            ["post_author"]=>
-            string(1) "1"
-            ["post_date"]=>
-            string(19) "2015-02-22 18:58:34"
-            ["post_date_gmt"]=>
-            string(19) "2015-02-22 18:58:34"
-            ["post_content"]=>
-            string(0) ""
-            ["post_title"]=>
-            string(13) "Prawy poĹ›lad"
-            ["post_excerpt"]=>
-            string(0) ""
-            ["post_status"]=>
-            string(7) "publish"
-            ["comment_status"]=>
-            string(4) "open"
-            ["ping_status"]=>
-            string(4) "open"
-            ["post_password"]=>
-            string(0) ""
-            ["post_name"]=>
-            string(11) "lewy-poslad"
-            ["to_ping"]=>
-            string(0) ""
-            ["pinged"]=>
-            string(0) ""
-            ["post_modified"]=>
-            string(19) "2015-02-22 18:58:44"
-            ["post_modified_gmt"]=>
-            string(19) "2015-02-22 18:58:44"
-            ["post_content_filtered"]=>
-            string(0) ""
-            ["post_parent"]=>
-            int(0)
-            ["guid"]=>
-            string(32) "http://localhost/wordpress/?p=42"
-            ["menu_order"]=>
-            int(0)
-            ["post_type"]=>
-            string(4) "post"
-            ["post_mime_type"]=>
-            string(0) ""
-            ["comment_count"]=>
-            string(1) "0"
-            ["filter"]=>
-            string(3) "raw"
-          }
-            
-    #}
-	{% endblock %}
+
+    <section role="main" class="content-wrapper">
+        <article class="site" id="site-{{url}}">
+            <section class="article-content">
+                <h1 class="article-h1">{{site.title}}</h1>
+                <div class="article-body">
+                    {% block content%}
+                        {{site.content}}
+                    {%endblock%}
+                </div>
+            </section>
+
+        </article>
+    </section>
+
+    {# <div class="article">
+             {% for category in categories %}
+                 <a name="{{category.slug}}"></a>
+                 <article class="{{category.name}}" style="height: 500px;">
+                     <h3>{{category.name}}</h3>
+                                         {#<div class="accordian">
+                                         <ul>
+                     {%for post in category.posts %}
+                                         <li>
+                         <section>
+                             <h4>{{post.post_title}}</h4>
+                             {{post.post_content}}
+                         </section>
+                                         </li>
+                     {%endfor%}
+                                         </ul>
+                                         </div> 
+                 </article>
+             {% endfor %}
+     </div>
+     
+         <div class="slider">
+             <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+                 <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja1.jpg" data-src="wp-content/themes/warmup/images/slides/realizacja1.jpg">
+                     <div class="camera_caption fadeFromBottom">
+                         Realizacja1
+                     </div>
+                 </div>
+                 <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja2.jpg" data-src="wp-content/themes/warmup//images/slides/realizacja2.jpg">
+                     <div class="camera_caption fadeFromBottom">
+                         Realizacja2
+                     </div>
+                 </div>
+                 <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja3.png" data-src="wp-content/themes/warmup/images/slides/realizacja3.png">
+                     <div class="camera_caption fadeFromBottom">
+                         Realizacja3
+                     </div>
+                 </div>
+                 <div data-thumb="wp-content/themes/warmup/images/slides/thumbs/realizacja4.jpg" data-src="wp-content/themes/warmup/images/slides/realizacja4.jpg">
+                     <div class="camera_caption fadeFromBottom">
+                         Realizacja4
+                     </div>
+                 </div>
+             </div>
+         </div>
+ 
+     
+     object(stdClass)#1873 (15) {
+           ["term_id"]=>
+           &string(1) "1"
+           ["name"]=>
+           &string(13) "Bez kategorii"
+           ["slug"]=>
+           &string(13) "bez-kategorii"
+           ["term_group"]=>
+           string(1) "0"
+           ["term_taxonomy_id"]=>
+           string(1) "1"
+           ["taxonomy"]=>
+           string(8) "category"
+           ["description"]=>
+           &string(0) ""
+           ["parent"]=>
+           &string(1) "0"
+           ["count"]=>
+           &string(1) "1"
+           ["cat_ID"]=>
+           &string(1) "1"
+           ["category_count"]=>
+           &string(1) "1"
+           ["category_description"]=>
+           &string(0) ""
+           ["cat_name"]=>
+           &string(13) "Bez kategorii"
+           ["category_nicename"]=>
+           &string(13) "bez-kategorii"
+           ["category_parent"]=>
+           &string(1) "0"
+         }
+             
+             
+             object(WP_Post)#1879 (24) {
+             ["ID"]=>
+             int(42)
+             ["post_author"]=>
+             string(1) "1"
+             ["post_date"]=>
+             string(19) "2015-02-22 18:58:34"
+             ["post_date_gmt"]=>
+             string(19) "2015-02-22 18:58:34"
+             ["post_content"]=>
+             string(0) ""
+             ["post_title"]=>
+             string(13) "Prawy poĹ›lad"
+             ["post_excerpt"]=>
+             string(0) ""
+             ["post_status"]=>
+             string(7) "publish"
+             ["comment_status"]=>
+             string(4) "open"
+             ["ping_status"]=>
+             string(4) "open"
+             ["post_password"]=>
+             string(0) ""
+             ["post_name"]=>
+             string(11) "lewy-poslad"
+             ["to_ping"]=>
+             string(0) ""
+             ["pinged"]=>
+             string(0) ""
+             ["post_modified"]=>
+             string(19) "2015-02-22 18:58:44"
+             ["post_modified_gmt"]=>
+             string(19) "2015-02-22 18:58:44"
+             ["post_content_filtered"]=>
+             string(0) ""
+             ["post_parent"]=>
+             int(0)
+             ["guid"]=>
+             string(32) "http://localhost/wordpress/?p=42"
+             ["menu_order"]=>
+             int(0)
+             ["post_type"]=>
+             string(4) "post"
+             ["post_mime_type"]=>
+             string(0) ""
+             ["comment_count"]=>
+             string(1) "0"
+             ["filter"]=>
+             string(3) "raw"
+           }
+             
+     #}
 
     {% block footer %}
         <div class="footer">

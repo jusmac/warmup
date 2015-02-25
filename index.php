@@ -24,6 +24,11 @@
 		$category->posts = get_posts(array('category_name' => $category->name));
 	}
 	$templates = array('base.twig');
+	
+	$site = new TimberSite(81);
+print_r($site); //this output a print_r on the site object
+$context = Timber::get_context();
+print_r($context['site']);
         
         
         
@@ -63,6 +68,7 @@
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
 	}
+	$context['site'] = $site;
 	Timber::render($templates, $context);
 
 
