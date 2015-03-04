@@ -45,13 +45,13 @@
         {% for homepage_section in homepage_content %}
             <a name="{{homepage_section.slug}}"></a>
             {% if homepage_section.type == 'post' %}
-            <h3>{{homepage_section.post.title}}</h3>
+            {#<h3>{{homepage_section.post.title}}</h3>#}
             <div>
                 {{homepage_section.post.content}}
             </div>
             {% elseif homepage_section.type == 'list' %}
                 <div class="accordian">
-                <ul>
+                <ul class="accordian_ul">
                 {% for post in homepage_section.content %}
                     <li>
                     <div class="image_title">

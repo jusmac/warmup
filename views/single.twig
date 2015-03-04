@@ -1,15 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-		<article class="site" id="site-{{url}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+    <article class="site" id="site-{{url}}">
+        <section class="article-body">
+            {{post.content}}
+        </section>
 
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-
-		</article>
+    </article>
 
 {% endblock %}
