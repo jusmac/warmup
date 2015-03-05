@@ -42,8 +42,8 @@
 
     padding: 7px;
     background-color: red;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
@@ -83,12 +83,54 @@
     display: none;
 }
 
+.wpcf7-form-control{
+    border: 1px double black;
+    border-radius: 5px;
+    padding: 2px;
+    display: inline-block;
+    width: 90%;
+    background:-webkit-gradient(linear, 50% 20%, 99% 18%, from(#B2B3AD), to(#84848E));
+}
+
 .footer{
+    width: 100%;
     background-color: lightcyan;
     margin: 0;
     padding: 10px;
     padding-left: 12%;
     padding-bottom: 20px;
+}
+
+.kontakt{
+    width:100%;
+    padding-left: 12%;
+    min-height: 600px;
+    padding-top: 30px;
+}
+
+.formularz{
+     background-image: url(/wordpress/wp-content/themes/warmup/img/tlo1.png); 
+     text-align: left;
+     padding-left: 12%;
+     min-height: 650px;
+     padding-top: 2%;
+     padding-bottom: 2%;
+}
+
+.dane_kontaktowe{
+    width: 50%;
+    padding: 10px;
+    display: block;
+    float: left;
+    min-height: 500px;
+}
+
+.formularz_kontaktowy{
+    display:block;
+    float: right;
+    width:50%;
+    padding: 10px;
+    min-height: 500px;
 }
 
 .contact{
@@ -113,7 +155,7 @@
     width: 88%;
     height: 560px;
     overflow: hidden;
-    margin: 0;
+    margin: 1%;
     margin-left: 11%;
     border-radius: 25px;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
@@ -123,7 +165,7 @@
 
 .accordian_ul {
     width: 2000px;
-    height: 100
+        
 }
 
 .accordian li {
@@ -169,75 +211,88 @@
 
 .accordian_image {
     width: 800px;
+    margin:1px;
 }
 
 .specjalisci{
     float:left;
     display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+ -webkit-animation: cssAnimation 1s 16 ease;
+
+.dojazd{
+    padding-left: 12%;
+}
+
+.mapa {
+    padding: 3%;
 }
 
 .rw-wrapper{
     margin: 0px auto 0 auto;
-    padding: 10px;
+    padding: 0;
     height: 600px;
-    padding-left: 12%;
     background-image: url(/wordpress/wp-content/themes/warmup/img/tlo1.png);
 }
 .rw-sentence{
     margin: 0;
+    margin-left: 12%;
+    position: absolute;
 }
+
 .rw-sentence span{
-    text-align: center;
+    text-align: left;
     color: rgba(150,150,100,1);
     font-family: 'Times New Roman';
     white-space: nowrap;
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+    text-shadow: -3px 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0%;
+    left: 50%;
+    font-size: 200%;
+    color: rgba(30, 30, 60, 0.7);
+    z-index: 9999;
 }
-.rw-sentence > span{
-    position: absolute;
-}
+
 .rw-sentence > span:first-child{
-    top: 0px;
-    right: 40%;
-    font-size: 500%;
+    top: 4%;
+    left: 2%;
+    font-size: 430%;
     color: rgba(60,90,148,0.6);
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    text-shadow: -3px 5px 15px rgba(0,0,0,0.3);
 }
 .rw-sentence > span:nth-child(2){
-    top: 10%;
-    right:0%;
-    font-size: 315%;
+    left: 40%;
+    font-size: 150%;
     color: rgba(30, 30, 60, 0.7);
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    text-shadow: -3px 5px 15px rgba(0,0,0,0.3);
 }
 .rw-sentence > span:nth-child(3){
-    top: 250px;
-    right: 40%;
-    font-size: 400%;
+    left: 60%;
+    font-size: 300%;
     color: rgba(150,200,255,0.8);
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    text-shadow: -3px 5px 15px rgba(0,0,0,0.3);
 }
-.rw-sentence > span:last-child{
-    top: 435px;
-    left: 550px;
-    font-size: 200%;
-    color: rgba(170,230,250, 0.9);
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
-}
+
 .rw-words{
     position: absolute;
     -webkit-perspective: 800px;
     perspective: 800px;
 }
 .rw-words span{
-    position: absolute;
-    font-size: 250%;
+    position: relative;
+    left: 90%;
+    font-size: 200%;
     color: transparent;
-    text-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+    text-shadow: -3px 5px 15px rgba(0,0,0,0.3);
     opacity: 0;
-    -webkit-animation: rotateWord 18s linear infinite 0s;
-    -ms-animation: rotateWord 18s linear infinite 0s;
-    animation: rotateWord 18s linear infinite 0s;
+    -webkit-animation: rotateWord 15s linear infinite 0s;
+    -ms-animation: rotateWord 15s linear infinite 0s;
+    animation: rotateWord 15s linear infinite 0s;
 }
 .rw-words span:nth-child(2) { 
     -webkit-animation-delay: 3s; 
@@ -245,6 +300,7 @@
     animation-delay: 3s; 
 }
 .rw-words span:nth-child(3) { 
+
     -webkit-animation-delay: 6s; 
     -ms-animation-delay: 6s; 
     animation-delay: 6s; 
@@ -263,12 +319,6 @@
     -webkit-animation-delay: 15s; 
     -ms-animation-delay: 15s; 
     animation-delay: 15s; 
-}
-
-.rw-words span:nth-child(7) { 
-    -webkit-animation-delay: 18s; 
-    -ms-animation-delay: 18s; 
-    animation-delay: 18s; 
 }
 
 @-webkit-keyframes rotateWord {
@@ -310,4 +360,125 @@
     .rw-words { left: 45px; top: 76px; }
     .rw-words span { font-size: 120%; }
     .rw-sentence > span:last-child { top: 106px; left: 10px; font-size: 100%; }
+}
+
+.wp-image-100{
+    transform: rotate(9deg) ;
+    -webkit-transform: rotate(9deg) ;
+    -moz-transform: rotate(9deg) ;
+    -o-transform: rotate(9deg) ;
+    -ms-transform: rotate(9deg) ;
+    box-shadow: 22px 22px 20px #000000;
+    margin-bottom: 50px;
+    margin-top: 90px;
+}
+
+.wp-image-100:hover{
+      -webkit-animation: cssAnimation 1s 16 ease;  -webkit-animation: cssAnimation 1s 16 ease;
+    -moz-animation: cssAnimation 1s 16 ease;
+    -o-animation: cssAnimation 1s 16 ease;
+    box-shadow: 22px 22px 75px #000000;
+}
+@-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -webkit-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+    from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -moz-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -o-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+
+.wp-image-103{
+    transform: rotate(1deg) ;
+    -webkit-transform: rotate(1deg) ;
+    -moz-transform: rotate(1deg) ;
+    -o-transform: rotate(1deg) ;
+    -ms-transform: rotate(1deg) ;
+    box-shadow: 22px 22px 20px #000000;
+    margin-bottom: 50px;
+}
+
+
+.wp-image-103:hover{
+    -webkit-animation: cssAnimation 1s 16 ease;
+    -moz-animation: cssAnimation 1s 16 ease;
+    -o-animation: cssAnimation 1s 16 ease;
+    box-shadow: 22px 22px 75px #000000;
+}
+@-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -webkit-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+    from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -moz-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -o-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+
+.wp-image-104{
+    transform: rotate(7deg) ;
+    -webkit-transform: rotate(7deg) ;
+    -moz-transform: rotate(7deg) ;
+    -o-transform: rotate(7deg) ;
+    -ms-transform: rotate(7deg) ;
+    box-shadow: 22px 22px 20px #000000;
+    margin-bottom: 50px;
+    margin-top: 195px;
+}
+
+
+.wp-image-104:hover{
+    -webkit-animation: cssAnimation 1s 16 ease;
+    -moz-animation: cssAnimation 1s 16 ease;
+    -o-animation: cssAnimation 1s 16 ease;
+    box-shadow: 22px 22px 75px #000000;
+}
+@-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -webkit-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+    from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -moz-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -o-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+
+.wp-image-105{
+    transform: rotate(20deg) ;
+    -webkit-transform: rotate(3deg) ;
+    -moz-transform: rotate(3deg) ;
+    -o-transform: rotate(3deg) ;
+    -ms-transform: rotate(3deg) ;
+    box-shadow: 22px 22px 20px #000000;
+    margin-bottom: 50px;
+    margin-top: 95px;
+}
+
+.wp-image-105:hover{
+    -webkit-animation: cssAnimation 1s 16 ease;
+    -moz-animation: cssAnimation 1s 16 ease;
+    -o-animation: cssAnimation 1s 16 ease;
+    box-shadow: 22px 22px 75px #000000;
+}
+@-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -webkit-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+    from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -moz-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -o-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
 }
