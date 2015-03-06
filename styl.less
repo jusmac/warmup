@@ -9,7 +9,33 @@
     margin:0;
 }
 
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .bod_y { 
+        font-size:16px;
+    }
+}
 
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .bod_y{ 
+        font-size:11px;
+    }
+}
+
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .h5 { 
+        font-size: 30px; 
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .h5 { 
+        font-size: 18px; 
+    }
+}
 
 .nav-main {
     width: 10%;
@@ -25,6 +51,20 @@
     padding: 4px;
     padding-left: 0;
 }
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .nav-main { 
+        display: block; 
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .nav-main { 
+        display: none; 
+    }
+}
+
 .nav {
     padding:3px;  
     padding-left:0;
@@ -108,13 +148,42 @@
     padding-top: 30px;
 }
 
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .kontakt { 
+        padding-left: 12%;
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .kontakt { 
+        padding-left: 1%;
+    }
+}
+
+
 .formularz{
-     background-image: url(/wordpress/wp-content/themes/warmup/img/tlo1.png); 
-     text-align: left;
-     padding-left: 12%;
-     min-height: 650px;
-     padding-top: 2%;
-     padding-bottom: 2%;
+    background-image: url(/wordpress/wp-content/themes/warmup/img/tlo1.png); 
+    text-align: left;
+    padding-left: 12%;
+    min-height: 650px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .formularz { 
+        padding-left: 12%;
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .formularz { 
+        padding-left: 2%;
+    }
 }
 
 .dane_kontaktowe{
@@ -140,32 +209,71 @@
     text-align: center;
 }
 
-.contact_img{
-    width: 250px;
-    margin-bottom: 20px
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .contact_img { 
+        width: 250px;
+        margin-bottom: 20px;
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .contact_img { 
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
 }
 
 .realizacje{
-    margin-left: 12%;
     margin-right: 10px;
     height:560px;
 }
 
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .realizacje { 
+        margin-left: 12%;
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .realizacje { 
+        margin-left: 10px;
+    }
+}
+
+
 .accordian {
-    width: 88%;
-    height: 560px;
     overflow: hidden;
     margin: 1%;
-    margin-left: 11%;
     border-radius: 25px;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
     -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 }
 
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .accordian { 
+        height:560px; 
+        width: 88%;
+        margin-left: 11%;
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .accordian { 
+        height:300px; 
+        width: 100%;
+        margin-left:1%;
+    }
+}
+
 .accordian_ul {
-    width: 2000px;
-        
+    width: 2000px;    
 }
 
 .accordian li {
@@ -222,10 +330,18 @@
     padding-top: 20px;
 }
 
- -webkit-animation: cssAnimation 1s 16 ease;
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .dojazd { 
+        margin-left: 12%; 
+    }
+}
 
-.dojazd{
-    padding-left: 12%;
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .dojazd { 
+        margin-left: 0; 
+    }
 }
 
 .mapa {
@@ -374,7 +490,7 @@
 }
 
 .wp-image-100:hover{
-      -webkit-animation: cssAnimation 1s 16 ease;  -webkit-animation: cssAnimation 1s 16 ease;
+    -webkit-animation: cssAnimation 1s 16 ease;  -webkit-animation: cssAnimation 1s 16 ease;
     -moz-animation: cssAnimation 1s 16 ease;
     -o-animation: cssAnimation 1s 16 ease;
     box-shadow: 22px 22px 75px #000000;
@@ -482,3 +598,30 @@
     from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
     to { -o-transform: rotate(0deg) scale(1.309) skew(1deg) translate(0px); }
 }
+
+.cycloneslider {
+    margin-left: 12%;
+}
+
+.cycloneslider-caption-title {
+    text-align: center;
+}
+
+.cycloneslider-caption-description {
+    text-align: center;
+}
+
+/*najwieksza rozdzielczosc laptopów*/
+@media only screen and (max-width: 1000px) {
+    .alignnone { 
+        height:560px; 
+    }
+}
+
+/*œredni telefon lub IPad*/
+@media only screen and (max-width: 680px) {
+    .alignnone { 
+        height:200px; 
+    }
+}
+
